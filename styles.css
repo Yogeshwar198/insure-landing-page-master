@@ -43,10 +43,11 @@ ul {
 a:hover,
 button:hover {
   transition: all 0.3s ease-in;
+  cursor: pointer;
 }
 
 nav {
-  padding: 4rem 9rem;
+  padding: 4rem 12rem;
 }
 nav .nav__container {
   display: flex;
@@ -79,7 +80,7 @@ nav .nav__container .nav__link:hover {
 }
 nav .nav__container .btn {
   padding: 0.8rem 2rem;
-  border: 2px solid hsl(256, 26%, 20%);
+  border: 0.2rem solid hsl(256, 26%, 20%);
   color: hsl(256, 26%, 20%);
   text-transform: uppercase;
   transition: background-color 0.3s;
@@ -101,7 +102,6 @@ nav .nav__container .btn:hover {
 
 .hero__section {
   position: relative;
-  overflow: hidden;
 }
 
 .hero__container {
@@ -112,15 +112,38 @@ nav .nav__container .btn:hover {
   justify-content: center;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 9rem 0rem 9rem 12rem;
   background-color: hsl(256, 26%, 20%);
+  z-index: 0;
 }
 
 .patternimg__right {
   position: absolute;
   top: 0;
   right: 0;
+  max-width: 26%;
+  height: auto;
   z-index: 10;
+  margin-top: -5.5rem;
+  -webkit-clip-path: inset(13% 0 0 0);
+          clip-path: inset(13% 0 0 0);
+}
+
+.patternimg__right--mobile {
+  display: none;
+}
+
+.patternimg__left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  margin-top: 40rem;
+  max-width: 16rem;
+}
+
+.patternimg__left--mobile {
+  display: none;
 }
 
 .hero__main {
@@ -130,7 +153,7 @@ nav .nav__container .btn:hover {
   width: 100%;
   position: relative;
   z-index: 1;
-  padding: 80px 0;
+  padding: 2rem 0;
 }
 @media (max-width: 768px) {
   .hero__main {
@@ -141,58 +164,266 @@ nav .nav__container .btn:hover {
 
 .hero__left {
   max-width: 50%;
-  padding-right: 40px;
+  padding-right: 4rem;
+}
+.hero__left div {
+  max-width: 25%;
+  background-color: hsl(0, 0%, 98%);
+  height: 0.1rem;
+  margin-bottom: 5rem;
 }
 .hero__left h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #333;
+  font-size: 6vw;
+  margin-bottom: 3.5rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 98%);
+  line-height: 0.8;
 }
 .hero__left p {
-  font-size: 1.125rem;
-  color: #666;
+  font-size: 1.4rem;
+  color: hsl(0, 0%, 98%);
   margin-bottom: 2rem;
+  font-weight: 100;
 }
 .hero__left button {
-  padding: 12px 30px;
-  background-color: #00b4d8;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 0.8rem 2rem;
+  border: 0.15rem solid hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 98%);
+  text-transform: uppercase;
+  background-color: hsl(256, 26%, 20%);
 }
 .hero__left button:hover {
-  background-color: #007f8c;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(270, 9%, 17%);
 }
 
 .hero__right {
   max-width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 2rem;
 }
 .hero__right img {
-  width: 100%;
+  max-width: 85%;
   height: auto;
 }
+@media (max-width: 768px) {
+  .hero__right {
+    position: relative;
+    max-width: 100%;
+    margin-top: 0;
+  }
+}
 
-.bg-pattern-right {
+.different__section {
+  padding: 12rem 0;
+}
+
+.different__container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 10rem 9rem 0rem 9rem;
+}
+
+.different__container span {
+  display: block;
+  max-width: 15%;
+  height: 0.2rem;
+  background-color: hsl(216, 30%, 68%);
+  margin-bottom: 2rem;
+}
+
+.different__container h1 {
+  font-size: 7rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.different__cards {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.different__card {
+  width: 30%;
+  transition: transform 0.3s;
+}
+
+.different__card h1 {
+  font-size: 2.5rem;
+}
+
+.different__card:hover {
+  transform: translateY(-10px);
+}
+
+.different__card img {
+  max-width: 10rem;
+  margin-bottom: 2rem;
+}
+
+.different__card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.different__card p {
+  font-size: 1.5rem;
+  color: hsl(273, 4%, 51%);
+  opacity: 80%;
+}
+
+.work__section {
+  padding: 4vw 12vw;
+  text-align: center;
+}
+.work__section .work__container {
+  max-width: 120rem;
+  background: hsl(256, 26%, 20%);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.work__section .work__container .work__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 8rem;
+  max-width: 100%;
+}
+.work__section .work__container .work__flex .work__heading h1 {
+  font-size: 3.5vw;
+  font-weight: 400;
+  color: hsl(0, 0%, 98%);
+  max-width: 60%;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  text-align: start;
+}
+.work__section .work__container .work__flex button {
+  background-color: transparent;
+  color: hsl(0, 0%, 98%);
+  width: 11vw;
+  height: 4rem;
+  border: 0.2rem solid hsl(0, 0%, 98%);
+  letter-spacing: 0.1rem;
+  font-size: 0.9vw;
+  text-transform: uppercase;
+  z-index: 10;
+}
+.work__section .work__container .work__flex button:hover {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(256, 26%, 20%);
+}
+.work__section .work__container .work__img {
+  width: 28vw;
+  height: auto;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 0;
-  width: 300px;
-  height: auto;
+}
+@media (max-width: 768px) {
+  .work__section .work__container .work__img {
+    display: none;
+  }
+}
+.work__section .work__container .work__img--mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .work__section .work__container .work__img--mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
-.bg-pattern-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  width: 250px;
+.footer__section {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.footer__container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.footer__img,
+.footer__img--mobile {
+  width: 40%;
   height: auto;
-  transform: translateY(40%);
+  display: block;
+}
+
+.footer__img--mobile {
+  display: none;
+}
+
+.footer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.footer__social-icon {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__social-icon img {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+hr {
+  margin: 4rem 0;
+}
+
+.footer__main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+
+.footer__company,
+.footer__help,
+.footer__contact,
+.footer__others {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__company h1,
+.footer__help h1,
+.footer__contact h1,
+.footer__others h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__company li,
+.footer__help li,
+.footer__contact li,
+.footer__others li {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.footer__social-icon img:hover {
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {
@@ -207,9 +438,209 @@ nav .nav__container .btn:hover {
     width: 100%;
     height: auto;
   }
+  .hero__container {
+    padding: 6rem 1rem 6rem 1rem;
+  }
+  .hero__left {
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+  .hero__right {
+    max-width: 100%;
+    margin-top: 2rem;
+    position: relative;
+  }
+  .hero__main {
+    flex-direction: column-reverse;
+    margin-top: 0rem;
+  }
+  .patternimg__right {
+    margin-top: -1rem;
+    max-width: 35%;
+  }
+  .patternimg__left {
+    margin-top: 20rem;
+    max-width: 12rem;
+  }
+  .hero__right img {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .different__section {
+    padding: 0rem;
+  }
+  .different__container h1 {
+    font-size: 5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .different__card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .different__container {
+    text-align: center;
+  }
+  .work__section {
+    padding: 3rem 1.5rem;
+  }
+  .work__section .work__container .work__flex {
+    padding: 2rem;
+    flex-direction: column;
+  }
+  .work__section .work__container .work__flex .work__heading h1 {
+    font-size: 6.5rem;
+    max-width: 100%;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
+  .work__section .work__container .work__flex button {
+    width: 14rem;
+    margin-top: 5rem;
+    font-size: 1.2rem;
+  }
+  .footer__img--mobile {
+    display: block;
+  }
+  .footer__img {
+    display: none;
+  }
+  .footer__header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer__social-icon {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .footer__main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer__company,
+  .footer__help,
+  .footer__contact,
+  .footer__others {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .footer__company h1,
+  .footer__help h1,
+  .footer__contact h1,
+  .footer__others h1 {
+    font-size: 16px;
+  }
+  .footer__company li,
+  .footer__help li,
+  .footer__contact li,
+  .footer__others li {
+    font-size: 14px;
+  }
 }
 @media (max-width: 480px) {
   nav {
     padding: 4rem 4rem;
+  }
+  .hero__container {
+    padding: 0rem;
+  }
+  .hero__right {
+    margin-top: -2rem;
+  }
+  .hero__left {
+    padding: 1.5rem;
+  }
+  .hero__left div {
+    display: none;
+  }
+  .hero__left h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+    margin: 5rem 0rem 2rem 0rem;
+  }
+  .hero__left p {
+    font-size: 1.8rem;
+  }
+  .hero__left button {
+    border: 0.2rem solid hsl(0, 0%, 98%);
+  }
+  .patternimg__right {
+    display: none;
+  }
+  .patternimg__right--mobile {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: -22rem;
+  }
+  .patternimg__left--mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    margin-top: 43.4rem;
+    left: 0;
+  }
+  .patternimg__left {
+    display: none;
+  }
+  .different__section {
+    margin-top: 9rem;
+  }
+  .different__container {
+    padding: 2rem;
+  }
+  .different__container h1 {
+    font-size: 4rem;
+  }
+  .different__card h1 {
+    font-size: 2.5rem;
+  }
+  .work__section .work__container .work__flex {
+    padding: 5rem 1rem 5rem 1rem;
+  }
+  .work__section .work__container .work__flex .work__heading h1 {
+    font-size: 4rem;
+  }
+  .work__section .work__container .work__flex button {
+    width: 14rem;
+    font-size: 1.2rem;
+  }
+  .footer__img--mobile {
+    display: block;
+  }
+  .footer__img {
+    display: none;
+  }
+  .footer__header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer__social-icon {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .footer__main {
+    grid-template-columns: 1fr;
+  }
+  .footer__company,
+  .footer__help,
+  .footer__contact,
+  .footer__others {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .footer__company h1,
+  .footer__help h1,
+  .footer__contact h1,
+  .footer__others h1 {
+    font-size: 16px;
+  }
+  .footer__company li,
+  .footer__help li,
+  .footer__contact li,
+  .footer__others li {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=styles.css.map */
