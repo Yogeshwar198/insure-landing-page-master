@@ -72,6 +72,7 @@ nav .nav__container .nav__link {
   text-decoration: none;
   color: hsl(216, 30%, 68%);
   font-size: 1.4rem;
+  letter-spacing: 0.02rem;
   text-transform: uppercase;
   transition: color 0.3s;
 }
@@ -230,7 +231,7 @@ nav .nav__container .btn:hover {
 .different__container span {
   display: block;
   max-width: 15%;
-  height: 0.2rem;
+  height: 0.15rem;
   background-color: hsl(216, 30%, 68%);
   margin-bottom: 2rem;
 }
@@ -346,14 +347,17 @@ nav .nav__container .btn:hover {
 }
 
 .footer__section {
-  padding: 4rem 0;
   position: relative;
+}
+
+.footer__section .footer__img {
+  position: absolute;
 }
 
 .footer__container {
   max-width: 120rem;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 4rem 12rem;
   position: relative;
   text-transform: uppercase;
 }
@@ -409,21 +413,34 @@ hr {
 .footer__help h1,
 .footer__contact h1,
 .footer__others h1 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   margin-bottom: 1.5rem;
+  color: hsl(216, 30%, 68%);
+  font-family: "Karla", serif;
 }
 
 .footer__company li,
 .footer__help li,
 .footer__contact li,
 .footer__others li {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
+  font-weight: 500;
   cursor: pointer;
+  letter-spacing: 0.1rem;
+  color: hsl(256, 26%, 20%);
+}
+
+.footer__company li:hover,
+.footer__help li:hover,
+.footer__contact li:hover,
+.footer__others li:hover {
+  text-decoration: underline;
 }
 
 .footer__social-icon img:hover {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
@@ -475,6 +492,11 @@ hr {
     font-weight: 500;
     margin-bottom: 2rem;
   }
+  .different__container span {
+    margin: auto;
+    margin-bottom: 2rem;
+    max-width: 40%;
+  }
   .different__card {
     width: 100%;
     margin-bottom: 2rem;
@@ -500,6 +522,9 @@ hr {
     width: 14rem;
     margin-top: 5rem;
     font-size: 1.2rem;
+  }
+  .footer__container {
+    padding: 0rem 4rem;
   }
   .footer__img--mobile {
     display: block;
@@ -547,6 +572,7 @@ hr {
   }
   .hero__right {
     margin-top: -2rem;
+    z-index: 10;
   }
   .hero__left {
     padding: 1.5rem;
@@ -564,6 +590,7 @@ hr {
   }
   .hero__left button {
     border: 0.2rem solid hsl(0, 0%, 98%);
+    margin-bottom: 5rem;
   }
   .patternimg__right {
     display: none;
@@ -581,6 +608,7 @@ hr {
     top: 0;
     margin-top: 43.4rem;
     left: 0;
+    z-index: 0;
   }
   .patternimg__left {
     display: none;

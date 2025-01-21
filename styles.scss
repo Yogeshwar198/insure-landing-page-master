@@ -89,6 +89,7 @@ nav {
             text-decoration: none;
             color: $grayish-blue;
             font-size: 1.4rem;
+            letter-spacing: 0.02rem;
             text-transform: uppercase;
             transition: color 0.3s;
         }
@@ -264,7 +265,7 @@ nav {
 .different__container span {
     display: block;
     max-width: 15%;
-    height: 0.2rem;
+    height: 0.15rem;
     background-color: $grayish-blue;
     margin-bottom: 2rem;
 }
@@ -393,14 +394,17 @@ nav {
 // Footer Section
 
 .footer__section {
-    padding: 4rem 0;
     position: relative;
+}
+
+.footer__section .footer__img{
+    position: absolute;
 }
 
 .footer__container {
     max-width: 120rem;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 4rem 12rem;
     position: relative;
     text-transform: uppercase;
 }
@@ -458,8 +462,11 @@ hr {
 .footer__help h1,
 .footer__contact h1,
 .footer__others h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     margin-bottom: 1.5rem;
+    color: $grayish-blue;
+    font-family: $secondary-font;
 }
 
 
@@ -467,13 +474,23 @@ hr {
 .footer__help li,
 .footer__contact li,
 .footer__others li {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
+    font-weight: 500;
     cursor: pointer;
+    letter-spacing: 0.1rem;
+    color: $dark-violet;
+}
+
+.footer__company li:hover,
+.footer__help li:hover,
+.footer__contact li:hover,
+.footer__others li:hover {
+    text-decoration: underline;
 }
 
 .footer__social-icon img:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 
@@ -532,7 +549,7 @@ hr {
         margin-bottom: 2rem;
     }
 
-    
+
 
     .different__section {
         padding: 0rem;
@@ -542,6 +559,12 @@ hr {
         font-size: 5rem;
         font-weight: 500;
         margin-bottom: 2rem;
+    }
+
+     .different__container span{
+        margin: auto;
+        margin-bottom: 2rem;
+        max-width: 40%;
     }
 
     .different__card {
@@ -576,6 +599,10 @@ hr {
                 }
             }
         }
+    }
+
+    .footer__container {
+        padding: 0rem 4rem;
     }
 
     .footer__img--mobile {
@@ -636,6 +663,7 @@ hr {
 
     .hero__right {
         margin-top: -2rem;
+        z-index: 10;
     }
 
     .hero__left {
@@ -657,6 +685,7 @@ hr {
 
         button {
             border: 0.2rem solid $very-light-gray;
+            margin-bottom: 5rem;
         }
     }
 
@@ -678,6 +707,7 @@ hr {
         top: 0;
         margin-top: 43.4rem;
         left: 0;
+        z-index: 0;
     }
 
     .patternimg__left {
